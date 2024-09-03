@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="danger-message">    
+        <span><b>Danger!</b> Alert akan tertutup dalam <div id="countdown" style="display:inline;"></div></span>
+    </div>
+    <button onclick="startCountdown()">Munculkan Alert</button>
+    <script>
+        function startCountdown() {
+            let count = 5;
+            const countdownElement = document.getElementById('countdown');
+            const dangerMessageElement = document.getElementById('danger-message');
+    
+            countdownElement.textContent = count; 
+            countdownElement.style.display = 'inline'; 
+            dangerMessageElement.style.visibility = 'visible';
+    
+            const intervalId = setInterval(() => {
+                count--;
+                if (count >= 0) {
+                    countdownElement.textContent = count;
+                }
+                if (count <= 0) {
+                    countdownElement.textContent = "";
+                    dangerMessageElement.style.visibility = 'hidden'; 
+                    clearInterval(intervalId);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

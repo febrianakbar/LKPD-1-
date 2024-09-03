@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input dan Tampilkan Teks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="search-input" placeholder="Search..">
+    <button onclick="displayText()">Submit</button>
+    <div id="display-text">Tidak mencari data</div>
+    <script>
+        function displayText() {
+            const inputElement = document.getElementById('search-input');
+            const displayElement = document.getElementById('display-text');
+
+            const inputText = inputElement.value;
+
+            if (inputText.trim() === '') {
+                displayElement.innerHTML = 'Tidak mencari data';
+            } else {
+                displayElement.innerHTML = 'Mencari data <span class="highlight">' + inputText + '</span>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMOR 4</title>
+</head>
+<body>
+    <h1>NOMOR 4</h1>
+    <label for="image-select">Pilih Gambar:</label>
+    <select id="image-select">
+        <option value="sapi.jpeg">Gambar 1</option>
+        <option value="kambing.jpeg">Gambar 2</option>
+        <option value="">Gambar 3</option>
+    </select>
+
+    <label for="opacity-select">Pilih Opacity:</label>
+    <select id="opacity-select">
+        <option value="1">1</option>
+        <option value="0.5">0.5</option>
+        <option value="0.2">0.2</option>
+    </select>
+    
+    <button onclick="updateImage()">Terapkan</button>
+        <img id="selected-image" src="sapi.jpeg"/>
+        
+    <script>
+    function updateImage() {
+        const imageSelect = document.getElementById('image-select');
+        const opacitySelect = document.getElementById('opacity-select');
+        const selectedImage = document.getElementById('selected-image');
+        
+        const selectedImageSrc = imageSelect.value;
+        const selectedOpacity = opacitySelect.value; 
+        
+        selectedImage.src = selectedImageSrc;
+        selectedImage.style.opacity = selectedOpacity;
+    }
+    </script>
+</body>
+</html>
